@@ -1,10 +1,12 @@
 baseURL = "https://kyohsuke.github.io/"
-languageCode = "ja-jp"
+DefaultContentLanguage = "ja"
 title = "@kyohsuke"
 theme = "npq-hugo"
-copyright = 'Copyright © 2008 - 2020, Kyohsuke and the Hugo Authors; all rights reserved.'
+copyright = 'Copyright © 2020, Kyohsuke and the Hugo Authors; all rights reserved.'
 googleAnalytics = 'UA-846035-3'
 pygmentsUseClasses = true
+disableKinds = ["taxonomy", "term", "RSS"]
+hasCJKLanguage = true
 
 [params]
   useAvatar = true
@@ -16,17 +18,17 @@ pygmentsUseClasses = true
   [[menu.main]]
     name = 'トップ'
     url = '/'
-    pre = '<i class="fas fa-home fa-sm"></i>'
+    pre = '<i class="fas fa-home fa-ms"></i>'
     weight = 1
-  # [[menu.main]]
-  #   name = 'コンテンツ一覧'
-  #   pre = '<i class="fas fa-keyboard fa-ms"></i>'
-  #   url = '/posts/'
-  #   weight = 2
+  [[menu.main]]
+    name = 'ツール'
+    pre = '<i class="fas fa-tools fa-ms"></i>'
+    url = '/tools/'
+    weight = 2
   [[menu.main]]
     name = 'note'
     url = 'https://note.com/kyohsuke'
-    pre = '<i class="far fa-sticky-note fa-rotate-180"></i>'
+    pre = '<i class="far fa-sticky-note fa-rotate-180 fa-ms"></i>&ensp;'
     weight = 3
   [[menu.main]]
     name = 'twitter'
