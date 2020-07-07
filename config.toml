@@ -2,7 +2,7 @@ baseURL = "https://kyohsuke.github.io/"
 languageCode = "ja-jp"
 title = "@kyohsuke"
 theme = "npq-hugo"
-copyright = 'Copyright © 2008 - 2020, Steve Francia and the Hugo Authors; all rights reserved.'
+copyright = 'Copyright © 2008 - 2020, Kyohsuke and the Hugo Authors; all rights reserved.'
 googleAnalytics = 'UA-846035-3'
 pygmentsUseClasses = true
 
@@ -35,7 +35,7 @@ pygmentsUseClasses = true
     weight = 4
   [[menu.main]]
     name = 'discord'
-    url = 'https://github.com/kyohsuke'
+    url = 'https://discord.com/channels/@me/157617232136896514'
     pre = '<i class="fab fa-discord fa-ms"></i>'
     weight = 5
   [[menu.main]]

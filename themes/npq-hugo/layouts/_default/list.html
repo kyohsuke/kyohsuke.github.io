@@ -10,7 +10,10 @@
                 {{end}}
                 <div class="meta">
                 {{with .Date}}
-                    <i class="far fa-calendar-alt"></i> {{.Format "Jan 2 2006"}}
+                    <i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}
+                {{end}}
+                {{with .Lastmod}}
+                    <i class="fas fa-clock"></i> {{.Format "2006-01-02"}}
                 {{end}}
                 <br>
                 {{with .Params.tags}}

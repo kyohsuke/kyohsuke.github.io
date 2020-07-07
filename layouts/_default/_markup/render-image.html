@@ -1,0 +1,3 @@
+{{ if in .Destination "#center"}}<center>{{end}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .PlainText }} title="{{ . }}"{{ end }}>
+{{ if in .Destination "#center"}}</center>{{end}}
