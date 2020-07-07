@@ -1,0 +1,3 @@
+augroup PreVimOpenMarkdown
+  autocmd!
+augroup END
