@@ -42,6 +42,5 @@ At your own risk でお願いします。
 
 3. 入力が終わったら [Add Mapping] を押せば登録完了  
 ポートの開放ができた場合ランプがグリーンになる
-
 ![NAT-PMP 3](/images/nat_pmp3.png#center)
 
