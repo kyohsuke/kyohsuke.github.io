@@ -13,6 +13,7 @@ hasCJKLanguage = true
   author = "@kyohsuke"
   displayHomeContent = true
   recentMax = 4
+  mainSections = ['tools']
 
 [menu]
   [[menu.main]]
