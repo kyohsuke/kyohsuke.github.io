@@ -32,7 +32,7 @@ hasCJKLanguage = true
     weight = 3
   [[menu.main]]
     name = 'twitter'
-    url = 'https://twitter.com/intent/user?user_id=1022113389248737283'
+    url = 'https://twitter.com/kyohsuke14'
     pre = '<i class="fab fa-twitter fa-ms"></i>'
     weight = 4
   [[menu.main]]
