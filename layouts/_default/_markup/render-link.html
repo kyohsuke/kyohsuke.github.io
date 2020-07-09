@@ -1,5 +1,5 @@
-<a href="{{ .Destination }}"
-   {{ $url := strings.TrimSuffix "#gtag" .Destination | safeURL }}
+{{ $url := strings.TrimSuffix "#gtag" .Destination }}
+<a href="{{ $url }}"
    {{ if not .Page.Site.IsServer }}
    {{ if in .Destination "#gtag" }}
    {{ if .Page.Site.GoogleAnalytics }}

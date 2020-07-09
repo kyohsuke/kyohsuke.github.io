@@ -1,4 +1,4 @@
-{{- $url := strings.TrimSuffix "#center" .Destination | safeURL -}}
+{{- $url := strings.TrimSuffix "#center" .Destination -}}
 {{ if in .Destination "#center"}}<center>{{end}}
   <img src="{{ $url }}" alt="{{ .PlainText }}"{{ with .PlainText }} title="{{ . }}"{{ end }}>
 {{ if in .Destination "#center"}}</center>{{end}}
