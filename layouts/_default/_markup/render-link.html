@@ -1,1 +1,14 @@
-<a href="{{ .Destination | safeURL }}"{{ if hasPrefix .Destination "http" }} target="_blank" rel="nofollow noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{ $url := strings.TrimSuffix "#gtag" .Destination | safeURL | safeHTML }}
+<a href="{{ $url }}"
+   {{ if not .Page.Site.IsServer }}
+   {{ if in .Destination "#gtag" }}
+   {{ if .Page.Site.GoogleAnalytics }}
+   onclick="gtag('config', '{{ .Page.Site.GoogleAnalytics }}', { 'page_title': '{{ $url }}', 'page_path': '{{ $url }}'})"
+   {{ end }}
+   {{ end }}
+   {{ end }}
+   {{ if hasPrefix .Destination "http" }}
+   target="_blank"
+   rel="nofollow noopener"
+   {{ end }}
+   >{{ .Text | safeHTML }}</a>
