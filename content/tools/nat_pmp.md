@@ -20,7 +20,7 @@ Windows7 32bit/64bit で動作確認していますが、ビルド自体は 32bi
 また、Windows10 以降で使えるか分かりません。
 
 ウェブサイトが消失しているので、  
-何かあった時のためにソースコードを [Google Code](https://code.google.com/archive/p/dotnetportmapper/) から [Github](https://github.com/kyohsuke/dotnetportmapper) に移設&アーカイブしていますが、  
+何かあった時のためにソースコードを [Google Code](https://code.google.com/archive/p/dotnetportmapper) から [Github](https://github.com/kyohsuke/dotnetportmapper) に移設&アーカイブしていますが、  
 今もビルドできるかどうかは分かりません。
 
 At your own risk でお願いします。
