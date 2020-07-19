@@ -14,35 +14,42 @@ hasCJKLanguage = true
   displayHomeContent = true
   recentMax = 4
   mainSections = ['tools']
+  displayMicroBlog = true
+  MicroBlogSection = 'misc_notes'
 
 [menu]
   [[menu.main]]
     name = 'トップ'
     url = '/'
     pre = '<i class="fas fa-home fa-ms"></i>'
-    weight = 1
+    weight = 10
+  [[menu.main]]
+    name = '雑記'
+    pre = '<i class="fas fa-book fa-ms"></i>'
+    url = '/misc_notes/'
+    weight = 15
   [[menu.main]]
     name = 'ツール'
     pre = '<i class="fas fa-tools fa-ms"></i>'
     url = '/tools/'
-    weight = 2
+    weight = 20
   [[menu.main]]
     name = 'note'
     url = 'https://note.com/kyohsuke'
     pre = '<i class="far fa-sticky-note fa-rotate-180 fa-ms"></i>&ensp;'
-    weight = 3
+    weight = 30
   [[menu.main]]
     name = 'twitter'
     url = 'https://twitter.com/kyohsuke14'
     pre = '<i class="fab fa-twitter fa-ms"></i>'
-    weight = 4
+    weight = 40
   [[menu.main]]
     name = 'discord'
     url = 'https://discord.com/channels/@me/157617232136896514'
     pre = '<i class="fab fa-discord fa-ms"></i>'
-    weight = 5
+    weight = 50
   [[menu.main]]
     name = 'github'
     url = 'https://github.com/kyohsuke'
     pre = '<i class="fab fa-github fa-ms"></i>'
-    weight = 6
+    weight = 60
