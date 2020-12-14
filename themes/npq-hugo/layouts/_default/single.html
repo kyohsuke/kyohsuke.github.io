@@ -9,6 +9,10 @@
     {{end}}  
     {{.TableOfContents}}
     {{.Content}}
+    {{if eq .Section .Site.Params.microBlogSection}}
+    {{ template "_internal/disqus.html" . }}
+    <div class="spacer"></div>
+    {{end}}  
     {{if ne .Section ""}}
     <div class="nav-next-prev">
         <div class="nav-prev">
