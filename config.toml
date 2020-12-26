@@ -40,9 +40,9 @@ disqusShortname = "kyohsuke"
     pre = '<i class="fab fa-twitter fa-ms"></i>'
     weight = 40
   [[menu.main]]
-    name = 'discord'
-    url = 'https://discord.com/channels/@me/157617232136896514'
-    pre = '<i class="fab fa-discord fa-ms"></i>'
+    name = 'Steam'
+    url = 'https://steamcommunity.com/id/kyohsuke'
+    pre = '<i class="fab fa-steam fa-ms"></i>'
     weight = 50
   [[menu.main]]
     name = 'github'
