@@ -4,6 +4,13 @@
     {{else}}
     <div class="spacer"></div>
     {{end}}
+    {{with .Date}}
+        <i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}
+    {{end}}
+    {{if ne .Date .Lastmod}}
+        &nbsp;&nbsp;
+        <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
+    {{end}}
     {{ with .Params.githubrepo}}
        github repository : <a href="{{.}}">{{.}}</a>
     {{end}}  

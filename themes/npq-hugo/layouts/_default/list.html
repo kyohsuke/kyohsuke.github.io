@@ -13,12 +13,13 @@
                     <i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}
                 {{end}}
                 {{if ne .Date .Lastmod}}
+                    &nbsp;&nbsp;
                     <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
                 {{end}}
                 <br>
                 {{with .Params.tags}}
-                        <i class="fas fa-tags"></i> 
-                        Tags: {{ delimit . ", " }}
+                    <i class="fas fa-tags"></i> 
+                    Tags: {{ delimit . ", " }}
                 {{end}}
                 </div>
             </div>
