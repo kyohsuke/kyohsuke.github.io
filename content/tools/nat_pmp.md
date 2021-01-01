@@ -1,7 +1,7 @@
 ---
-title: "Windows 用の NAT-PMP ポート開放ツール"
+title: "Windows 用の UPnP・NAT-PMP ポート開放ツール"
 date: 2012-02-17T19:43:41+09:00
-lastmod: 2019-07-07T19:43:41+09:00
+lastmod: 2021-01-02T00:00:00+09:00
 ---
 
 # ファイル
@@ -9,13 +9,14 @@ lastmod: 2019-07-07T19:43:41+09:00
 
 # 経緯
 
+PCゲームを遊ぶ時などでポート開放が必要になるのですが、  
 AirMac Extreme はポート開放の方式が UPnP ではなく NAT-PMP なので、  
-一般的なポート開放アプリではなく NAT-PMP に対応したやつが必要になるわけです。
+一般的なアプリではなく NAT-PMP に対応したやつが必要になります。
 
-PCゲームで遊ぶ時のポート開放で必要になるのですが、探してみてもあまり見つかりません。  
 唯一 [こちらのサイト](http://deusty.blogspot.com/2008/07/tcmportmapper-for-windows.html) (今は消滅) にあったのですが、  
 [配布されているバイナリ](https://code.google.com/archive/p/dotnetportmapper/downloads) では Windows7 64bit で動かなかったので、動くようにビルドしました。  
 
+このアプリで NPnP・NAT-PMP 両方の方式で開放できます。
 Windows7 32bit/64bit で動作確認していますが、ビルド自体は 32bit です。  
 また、Windows10 以降で使えるか分かりません。
 
