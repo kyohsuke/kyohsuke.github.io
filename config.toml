@@ -8,6 +8,7 @@ pygmentsUseClasses = true
 disableKinds = ["term", "taxonomy", "taxonomyTerm"]
 hasCJKLanguage = true
 disqusShortname = "kyohsuke"
+enableRobotsTXT = true
 
 [outputs]
   home = ['HTML']
