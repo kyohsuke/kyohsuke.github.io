@@ -5,9 +5,12 @@ theme = "npq-hugo"
 copyright = 'Copyright © 2020 Kyohsuke | Powered by Hugo using the npq hugo theme.'
 googleAnalytics = 'UA-846035-3'
 pygmentsUseClasses = true
-disableKinds = ["taxonomy", "term", "RSS"]
+disableKinds = ["term"]
 hasCJKLanguage = true
 disqusShortname = "kyohsuke"
+
+[outputs]
+  home = ['HTML']
 
 [params]
   useAvatar = true
