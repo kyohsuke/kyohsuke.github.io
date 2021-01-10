@@ -1,9 +1,11 @@
 baseURL = "https://kyohsuke.github.io/"
+
+languageCode = "ja-jp"
 DefaultContentLanguage = "ja"
+
 title = "@kyohsuke"
 theme = "npq-hugo"
-copyright = 'Copyright © 2020 Kyohsuke | Powered by Hugo using the npq hugo theme.'
-googleAnalytics = 'UA-846035-3'
+copyright = 'Copyright © 2020-2021 Kyohsuke | Powered by Hugo using the npq hugo theme.'
 pygmentsUseClasses = true
 disableKinds = ["term", "taxonomy", "taxonomyTerm"]
 hasCJKLanguage = true
@@ -13,14 +15,20 @@ enableRobotsTXT = true
 [outputs]
   home = ['HTML']
 
+[social]
+  twitter = '@kyohsuke14'
+  twitterId = '1022113389248737283'
+
 [params]
   useAvatar = true
-  author = '@kyohsuke'
+  author = '雪椿'
   displayHomeContent = true
   recentMax = 4
   mainSections = ['tools']
   displayMicroBlog = true
   MicroBlogSection = 'misc_notes'
+  locale = "ja_JP"
+  googleTagManager = 'GTM-K5XRD2X'
 
 [menu]
   [[menu.main]]

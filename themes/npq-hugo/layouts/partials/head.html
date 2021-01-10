@@ -1,70 +1,59 @@
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-language" content="ja" />
+  {{- $title := .Title -}}
+  {{- if ne .Site.Title .Title -}}
+    {{- $title = printf "%s | %s" .Title .Site.Title -}}
+  {{- end -}}
+
+  {{- $description := .Description -}}
+  {{ if not .Description -}}
+    {{ if .IsPage -}}
+      {{ $description = .Summary }}
+    {{- else -}}
+      {{ $description = .Site.Params.description }}
+    {{ end -}}
+  {{ end }}
+
+  {{- partial "gtm_head" . -}}
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Hatena::Bookmark" content="nocomment" />
   <meta name="google-site-verification" content="_sC0CF55xyXtHKIPhr72YcZf2fwSLp4sLAxgOJBYGUA" />
   <meta name="robots" content="index,follow" />
+  <meta name="description" content="{{ $description }}" />
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  {{ hugo.Generator }}
 
-  {{ partial "analytics" . -}}
-  {{ with .Description -}}
-    <meta name="description" content="{{ . }}" />
-  {{- else -}}
-    {{ if .IsPage -}}
-      <meta name="description" content="{{ .Summary }}" />
-    {{- else -}}
-      {{ with .Site.Params.description -}}
-        <meta name="description" content="{{ . }}" />
-      {{ end -}}
-    {{ end -}}
-  {{ end }}
-  {{ with .Site.Params.author -}}
-  <meta name="Author" content="{{.}}" />
-  {{ end }}
-  {{ with .Site.Params.keywords -}}
-  <meta name="keywords" content="{{.}}">
-  {{ end -}}
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="{{ .Title }}" />
-  {{ with .Description -}}
-    <meta name="twitter:description" content="{{ . }}" />
-  {{- else -}}
-    {{ if .IsPage -}}
-      <meta name="twitter:description" content="{{ .Summary }}" />
-    {{- else -}}
-      {{ with .Site.Params.description -}}
-        <meta name="twitter:description" content="{{ . }}" />
-      {{ end -}}
-    {{ end -}}
-  {{ end }}
-  <meta name="twitter:site" content="@kyohsuke14" />
+  <meta name="twitter:site:id" content="{{ .Site.Social.twitterId }}" />
+  <meta name="twitter:creator:id" content="{{ .Site.Social.twitterId }}" />
+  <meta name="twitter:description" content="{{ $description }}" />
+  <meta name="twitter:title" content="{{ $title }}" />
   <meta name="twitter:image" content="{{ "avatar.png" | absURL }}" />
   <!-- /Twitter Card data -->
+
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:title" content="{{ $title }}" />
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-  {{ with .Description -}}
-    <meta property="og:description" content="{{ . }}" />
-  {{- else -}}
-    {{ if .IsPage -}}
-      <meta property="og:description" content="{{ .Summary }}" />
-    {{- else -}}
-      {{ with .Site.Params.description -}}
-        <meta property="og:description" content="{{ . }}" />
-      {{ end -}}
-    {{ end -}}
-  {{ end }}
-  <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:image" content="{{ "avatar.png" | absURL }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:description" content="{{ $description }}" />
+  <meta property="og:locale" content="{{ .Site.Params.Locale }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  {{- if .IsPage -}}
+  {{- with .Date -}}
+  <meta property="og:article:published_time" content="{{.Format "2006-01-02"}}" />
+  {{end}}
+  {{- if ne .Date .Lastmod -}}
+  <meta property="og:article:modified_time" content="{{.Lastmod.Format "2006-01-02"}}" />
+  {{end}}
+  {{- end -}}
   <!-- /Open Graph -->
+
   <link rel="stylesheet" href={{ "css/syntax.css" | absURL }}>
   <link rel="stylesheet" href={{ "css/style.css" | absURL }}>
-  <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-  {{- if eq .Site.Title .Title }}
-  <title>{{ .Title }}</title>
-  {{ else }}
-  <title>{{ .Site.Title }} | {{ .Title }}</title>
-  {{- end }}
+  <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
+
+  <title>{{ $title }}</title>
 </head>
