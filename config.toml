@@ -11,6 +11,7 @@ disableKinds = ["term", "taxonomy", "taxonomyTerm"]
 hasCJKLanguage = true
 disqusShortname = "kyohsuke"
 enableRobotsTXT = true
+enableGitInfo = true
 
 [outputs]
   home = ['HTML']

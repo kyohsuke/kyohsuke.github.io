@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-{{with .Site.BaseURL}}
+{{ with .Site.BaseURL }}
 Sitemap: {{.}}sitemap.xml
 Sitemap: {{.}}misc_notes/index.xml
-{{end }}
+{{ end }}
