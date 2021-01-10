@@ -4,17 +4,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Hatena::Bookmark" content="nocomment" />
-  <meta name="google" content="notranslate" />
-  <meta name="robots" content="index,follow,noimageindex,noarchive,nosnippet" />
 
-  {{- partial "analytics" . -}}
-  {{with .Site.Params.description -}}
-  <meta name="description" content="{{.}}">
+  <!-- Google -->
+  <meta name="google" content="notranslate" />
+  <meta name="google-site-verification" content="_sC0CF55xyXtHKIPhr72YcZf2fwSLp4sLAxgOJBYGUA" />
+  <!-- /Google -->
+
+  <meta name="robots" content="index,follow,noimageindex,noarchive,nosnippet" />
+  {{ partial "analytics" . -}}
+  {{ with .Description -}}
+    <meta name="description" content="{{ . }}" />
+  {{- else -}}
+    {{ if .IsPage -}}
+      <meta name="description" content="{{ .Summary }}" />
+    {{- else -}}
+      {{ with .Site.Params.description -}}
+        <meta name="description" content="{{ . }}" />
+      {{ end -}}
+    {{ end -}}
   {{ end }}
-  {{- with .Site.Params.author -}}
-  <meta name="Author" content="{{.}}">
+  {{ with .Site.Params.author -}}
+  <meta name="Author" content="{{.}}" />
   {{ end }}
-  {{- with .Site.Params.keywords -}}
+  {{ with .Site.Params.keywords -}}
   <meta name="keywords" content="{{.}}">
   {{ end -}}
   <!-- Twitter Card data -->
@@ -54,5 +66,9 @@
   <link rel="stylesheet" href={{ "css/syntax.css" | absURL }}>
   <link rel="stylesheet" href={{ "css/style.css" | absURL }}>
   <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-  <title>{{ .Site.Title }}</title>
+  {{- if eq .Site.Title .Title }}
+  <title>{{ .Title }}</title>
+  {{ else }}
+  <title>{{ .Site.Title }} | {{ .Title }}</title>
+  {{- end }}
 </head>

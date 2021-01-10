@@ -15,7 +15,7 @@ enableRobotsTXT = true
 
 [params]
   useAvatar = true
-  author = "@kyohsuke"
+  author = '@kyohsuke'
   displayHomeContent = true
   recentMax = 4
   mainSections = ['tools']
@@ -58,6 +58,3 @@ enableRobotsTXT = true
     url = 'http://amzn.to/2MLEYXX'
     pre = '<i class="fab fa-amazon fa-ms"></i>'
     weight = 70
-
-
-
