@@ -1,9 +1,1 @@
-{{ $url := strings.TrimSuffix "#gtag" .Destination }}
-<a href="{{ $url }}"
-   {{ if in .Destination "#gtag" -}}
-   {{ if .Page.Site.GoogleAnalytics -}}
-   onclick="gtag('config', '{{ .Page.Site.GoogleAnalytics }}', { 'page_path': this.href })"
-   {{ end -}}
-   {{ end -}}
-   {{ if hasPrefix .Destination "http" }} rel="nofollow noopener" {{ end }}
-   >{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination }}" {{ if hasPrefix .Destination "http" }}rel="nofollow noopener"{{ end }}>{{ .Text | safeHTML }}</a>

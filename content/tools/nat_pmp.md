@@ -5,7 +5,7 @@ lastmod: 2021-01-02T00:00:00+09:00
 ---
 
 # ファイル
-[ダウンロード](/files/portmap.zip#gtag)
+[ダウンロード](/files/portmap.zip)
 
 # 経緯
 
