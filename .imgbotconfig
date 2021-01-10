@@ -1,0 +1,7 @@
+{
+  "ignoredFiles": [
+    ".git/*",
+    ".github/*",
+    "themes/*"
+  ]
+}
