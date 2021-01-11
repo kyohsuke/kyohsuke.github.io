@@ -33,5 +33,13 @@ jobs:
             echo "no sitemap changes."
           else
             echo "sitemap changeed. ping!"
-            curl --silent http://www.google.com/ping?sitemap=https://example.com/sitemap.xml -o -
+            curl --silent http://www.google.com/ping?sitemap=https://kyohsuke.github.io/sitemap.xml -o - > /dev/null
+          fi
+
+          curl --silent https://kyohsuke.github.io/misc_notes/index.xml -o notes_before.xml
+          if diff -q public/misc_notes/index.xml notes_before.xml; then
+            echo "no RSS changes."
+          else
+            echo "RSS changeed. ping!"
+            curl --silent http://www.google.com/ping?sitemap=https://kyohsuke.github.io/misc_notes/index.xml -o - > /dev/null
           fi
