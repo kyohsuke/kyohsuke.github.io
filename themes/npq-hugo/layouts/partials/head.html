@@ -41,10 +41,10 @@
   <meta property="og:locale" content="{{ .Site.Params.Locale }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   {{- if .IsPage -}}
-  {{- with .Date -}}
+  {{- with .Date }}
   <meta property="og:article:published_time" content="{{.Format "2006-01-02"}}" />
   {{end}}
-  {{- if ne .Date .Lastmod -}}
+  {{- if ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") -}}
   <meta property="og:article:modified_time" content="{{.Lastmod.Format "2006-01-02"}}" />
   {{end}}
   {{- end -}}
@@ -54,16 +54,8 @@
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ readFile "/static/apple-touch-icon.png" | sha1 }}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v={{ readFile "/static/favicon-32x32.png" | md5 }}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v={{ readFile "/static/favicon-16x16.png" | md5 }}" />
-  <link rel="manifest" href="/site.webmanifest?v={{ readFile "/static/site.webmanifest" | md5 }}" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v={{ readFile "/static/safari-pinned-tab.svg" | md5 }}" color="#5bbad5" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v={{ readFile "/static/mstile-144x144.png" | md5 }}" />
-  <meta name="theme-color" content="#ffffff" />
-  <!-- End Favicons -->
+  {{- partial "favicon" . -}}
+
   {{ hugo.Generator }}
 
   <title>{{ $title }}</title>
