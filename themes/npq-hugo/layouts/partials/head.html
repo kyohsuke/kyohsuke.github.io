@@ -16,13 +16,12 @@
 
   {{- partial "gtm_head" . -}}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="Hatena::Bookmark" content="nocomment" />
   <meta name="google-site-verification" content="_sC0CF55xyXtHKIPhr72YcZf2fwSLp4sLAxgOJBYGUA" />
   <meta name="robots" content="index,follow" />
   <meta name="description" content="{{ $description }}" />
   <meta name="author" content="{{ .Site.Params.author }}" />
-  {{ hugo.Generator }}
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary" />
@@ -51,21 +50,21 @@
   {{- end -}}
   <!-- End Open Graph -->
 
-  <link rel="stylesheet" href={{ "css/syntax.css" | absURL }}>
-  <link rel="stylesheet" href={{ "css/style.css" | absURL }}>
+  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
   <!-- Favicons -->
-  {{ $unixtimestamp := now.Unix }}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ $unixtimestamp }}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v={{ $unixtimestamp }}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v={{ $unixtimestamp }}" />
-  <link rel="manifest" href="/site.webmanifest?v={{ $unixtimestamp }}" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v={{ $unixtimestamp }}" color="#5bbad5" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ readFile "/static/apple-touch-icon.png" | sha1 }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v={{ readFile "/static/favicon-32x32.png" | md5 }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v={{ readFile "/static/favicon-16x16.png" | md5 }}" />
+  <link rel="manifest" href="/site.webmanifest?v={{ readFile "/static/site.webmanifest" | md5 }}" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v={{ readFile "/static/safari-pinned-tab.svg" | md5 }}" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v={{ $unixtimestamp }}" />
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v={{ readFile "/static/mstile-144x144.png" | md5 }}" />
   <meta name="theme-color" content="#ffffff" />
   <!-- End Favicons -->
+  {{ hugo.Generator }}
 
   <title>{{ $title }}</title>
 </head>
