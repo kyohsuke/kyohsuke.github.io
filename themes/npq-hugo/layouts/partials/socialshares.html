@@ -1,0 +1,78 @@
+{{ $linkUrl := .Permalink | absURL }}
+{{- $title := .Title -}}
+{{- if ne .Site.Title .Title -}}
+  {{- $title = printf "%s | %s" .Title .Site.Title -}}
+{{- end -}}
+
+<script type="text/javascript">
+  function openShare(link) {
+      let width = parseInt(link.dataset.width);
+      let height = parseInt(link.dataset.height);
+      let wTop = window.screenTop + (window.innerHeight / 2) - (height / 2);
+      let wLeft = window.screenLeft + (window.innerWidth / 2) - (width / 2);
+      let options = "width=" + width + ",height=" + height + ',top=' + wTop + ',left=' + wLeft + 'personalbar=0,toolbar=0,scrollbars=1,resizable=!';
+
+      window.open(link.href, "Share", options);
+      return false;
+    }
+</script>
+<div style="float: right;">
+  <a
+    onclick="openShare(this); return false;"
+    data-width="600"
+    data-height="349"
+    rel="ugc,nofollow"
+    class="share-button-round"
+    title="クリックして Twitter で共有"
+    href="https://twitter.com/intent/tweet?via={{ .Site.Social.twitter }}&url={{ $linkUrl }}&text={{ $title }}"
+    >
+    <i class="fab fa-twitter fa-ms">&nbsp;Twitter</i>
+  </a>
+
+  <a
+    onclick="openShare(this); return false;"
+    data-width="486"
+    data-height="319"
+    rel="ugc,nofollow"
+    class="share-button-round"
+    title="クリックして Facebook で共有"
+    href="http://www.facebook.com/share.php?u={{ $linkUrl }}"
+    >
+    <i class="fab fa-facebook fa-ms">&nbsp;Facebook</i>
+  </a>
+
+  <a
+    onclick="openShare(this); return false;"
+    data-width="450"
+    data-height="449"
+    rel="ugc,nofollow"
+    class="share-button-round"
+    title="クリックしてブックマーク"
+    href="http://b.hatena.ne.jp/add?mode=confirm&url={{ $linkUrl }}&title={{ $title }}"
+    >
+    <i class="fab fa-hatena fa-ms">&nbsp;Hatena</i>
+  </a>
+
+  <a
+    onclick="openShare(this); return false;"
+    data-width="450"
+    data-height="449"
+    rel="ugc,nofollow"
+    class="share-button-round"
+    title="クリックしてポケットに保存"
+    href="http://getpocket.com/edit?url={{ $linkUrl }}&title={{ $title }}"
+    >
+    <i class="fab fa-get-pocket fa-ms">&nbsp;Pocket</i>
+  </a>
+  {{if eq .Section .Site.Params.microBlogSection}}
+    <a
+      target="_blank"
+      rel="ugc,nofollow"
+      class="share-button-round"
+      title="クリックして RSS フィードを登録"
+      href="{{ "misc_notes/index.xml" | absURL }}"
+      >
+      <i class="fa fa-rss fa-ms">&nbsp;RSS</i>
+    </a>
+  {{end}}  
+</div>

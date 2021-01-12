@@ -1,0 +1,39 @@
+/* From: https://hayashikejinan.com/webwork/css/913/ */
+/* Font Awesome hatena bookmark */
+.fa-hatena:before {
+  content: "B!";
+  font-family: Verdana;
+  font-weight: bold
+}
+
+.share-button-round {
+    text-decoration: none!important;
+    display: inline-block;
+    font-size: 12px;
+    font-family: open sans,sans-serif;
+    font-weight: 400;
+    border-radius: 3px;
+    color: #656565!important;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(0,0,0,.08);
+    text-shadow: none;
+    line-height: 23px;
+    padding: 1px 8px 0 5px;
+}
+
+.share-button-round:hover {
+    text-decoration: none!important;
+    display: inline-block;
+    font-size: 12px;
+    font-family: open sans,sans-serif;
+    font-weight: 400;
+    border-radius: 3px;
+    color: #656565!important;
+    background: #fefefe;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(0,0,0,.08);
+    text-shadow: none;
+    line-height: 23px;
+    padding: 1px 8px 0 5px;
+}

@@ -3,7 +3,7 @@ baseURL = "https://kyohsuke.github.io/"
 languageCode = "ja-jp"
 DefaultContentLanguage = "ja"
 
-title = "@kyohsuke"
+title = "kyohsuke"
 theme = "npq-hugo"
 copyright = 'Copyright © 2020-2021 Kyohsuke | Powered by Hugo using the npq hugo theme.'
 pygmentsUseClasses = true
@@ -20,7 +20,7 @@ enableGitInfo = true
   home = ['HTML']
 
 [social]
-  twitter = '@kyohsuke14'
+  twitter = 'kyohsuke14'
   twitterId = '1022113389248737283'
 
 [params]
