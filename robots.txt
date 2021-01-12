@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 
-
 Sitemap: https://kyohsuke.github.io/sitemap.xml
 Sitemap: https://kyohsuke.github.io/misc_notes/index.xml
-
