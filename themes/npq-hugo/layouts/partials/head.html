@@ -14,6 +14,12 @@
     {{ end -}}
   {{ end }}
 
+  <script>
+    if (null != location.pathname.match('/kyohsuke.github.io')) {
+      window.location.replace(location.origin + location.pathname.replace('/kyohsuke.github.io', ''));
+    }
+  </script>
+
   {{- partial "gtm_head" . -}}
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,6 +68,5 @@
   {{- partial "favicon" . -}}
 
   {{ hugo.Generator }}
-
   <title>{{ $title }}</title>
 </head>
