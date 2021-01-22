@@ -1,6 +1,6 @@
 User-agent: *
-Disallow: /kyohsuke.github.io/
 Allow: /
+Disallow: /kyohsuke.github.io/
 
 Sitemap: https://kyohsuke.github.io/sitemap.xml
 eitemap: https://kyohsuke.github.io/misc_notes/index.xml
