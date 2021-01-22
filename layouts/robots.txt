@@ -1,7 +1,7 @@
 {{- $url := urls.Parse .Site.BaseURL -}}
 User-agent: *
-Disallow: /{{ $url.Host }}/
 Allow: /
+Disallow: /{{ $url.Host }}/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
 eitemap: {{ "misc_notes/index.xml" | absURL }}
