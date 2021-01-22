@@ -2,6 +2,7 @@
 title: "Hey Siri！ Apple Watch の場所は？"
 date: 2020-07-19T20:00:00+09:00
 lastmod: 2020-07-19T20:00:00+09:00
+tags: [日記]
 ---
 
 今まで Siri に「iPhone どこにある？」なん聞いて iPhone を探したりしていたんだけど、  

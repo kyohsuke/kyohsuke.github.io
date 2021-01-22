@@ -2,6 +2,7 @@
 title: "サイトの色を反転させる CSS Negative"
 date: 2020-12-30T20:00:00+09:00
 lastmod: 2021-01-01T10:00:00+09:00
+tags: [hugo, 開発]
 ---
 
 この About サイトはテンプレートとして[npq-hugo](https://themes.gohugo.io/npq-hugo/)を使っていて、  

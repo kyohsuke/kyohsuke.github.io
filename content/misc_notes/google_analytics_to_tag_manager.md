@@ -1,6 +1,8 @@
 ---
 title: "Google Analytics を Tag Manager から利用する"
 date: 2021-01-10T16:40:33+09:00
+lastmod: 2021-01-10T16:40:33+09:00
+tags: [hugo, 開発]
 ---
 
 Google Analytics は便利なんだけど、  

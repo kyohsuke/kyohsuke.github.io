@@ -12,6 +12,9 @@
       &nbsp;&nbsp;
       <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
     {{end}}
+    {{with .Params.tags}}
+      <i class="fas fa-tags"></i> {{ delimit . ", " }}
+    {{end}}
     {{- partial "socialshares.html" . -}}
   </div>
 
