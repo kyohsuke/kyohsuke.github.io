@@ -6,6 +6,28 @@
   font-weight: bold
 }
 
+.underline {
+  border-bottom: 1px solid #C2C2C2;
+  padding-bottom: 15px;
+}
+
+.float_right {
+  float: right;
+}
+
+.float_right:after {
+  clear: both;
+}
+
+.reading_time_in_minutes {
+    display: inline-block;
+    font-size: 14px;
+    font-family: open sans,sans-serif;
+    margin-top: 4px;
+    border: 1px solid;
+    color: #c55;
+}
+
 .share-button-round {
     text-decoration: none!important;
     display: inline-block;
