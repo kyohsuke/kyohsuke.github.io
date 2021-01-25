@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - source
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+  SLACK_CHANNEL: buildlogs
 
 jobs:
   deploy:
@@ -45,3 +48,16 @@ jobs:
             echo "RSS changeed. ping!"
             curl --silent http://www.google.com/ping?sitemap=https://kyohsuke.github.io/misc_notes/index.xml -o - > /dev/null
           fi
+      - name: Slack Notification on Success
+        if: success()
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_TITLE: Test Success
+          SLACK_COLOR: good
+
+      - name: Slack Notification on Failure
+        uses: rtCamp/action-slack-notify@v2.0.2
+        if: failure()
+        env:
+          SLACK_TITLE: Test Failure
+          SLACK_COLOR: danger
