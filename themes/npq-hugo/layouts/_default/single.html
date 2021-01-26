@@ -12,15 +12,17 @@
       &nbsp;&nbsp;
       <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
     {{end}}
-    <div class="float_right">{{- partial "socialshares.html" . -}}</div>
+    <div class="pc float_right">{{- partial "socialshares.html" . -}}</div>
   </div>
   <div class="underline">
     {{with .Params.tags}}
         <i class="fas fa-tags"></i> {{ delimit . ", " }}
     {{end}}
     {{ if eq .Section .Site.Params.microBlogSection }}
-      <div class="float_right reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
+      <div class="pc float_right reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
+      <div class="sp reading_time_in_minutes center">{{- partial "reading_time_in_minutes.html" . -}}</div>
     {{ end }}
+    <div class="sp">{{- partial "socialshares.html" . -}}</div>
   </div>
   {{ with .Params.githubrepo}}
     github repository : <a href="{{.}}">{{.}}</a>
