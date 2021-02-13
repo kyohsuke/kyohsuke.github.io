@@ -10,7 +10,7 @@
         {{ $pages := where site.RegularPages "Type" "in" site.Params.microBlogSection }}
         {{range first (default  4 .Site.Params.recentMax) (where $pages "Section" "eq" .Site.Params.microBlogSection)}}
             <div class="list-item">
-                <a class="entry-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <a class="entry-title" href="{{ .URL }}">{{ .Title }}</a>
                 {{$page := .}}
                 {{with .Description}}
                 <p>{{.}}</p>
@@ -39,7 +39,7 @@
         {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
         {{range first (default  4 .Site.Params.recentMax) (where $pages "Section" "ne" .Site.Params.microBlogSection)}}
             <div class="list-item">
-                <a class="entry-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <a class="entry-title" href="{{ .URL }}">{{ .Title }}</a>
                 {{$page := .}}
                 {{with .Description}}
                 <p>{{.}}</p>

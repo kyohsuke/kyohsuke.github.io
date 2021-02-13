@@ -4,30 +4,31 @@
   {{else}}
     <div class="spacer"></div>
   {{end}}
-  <div>
+  <div style="display: flex; width: 100%;">
     {{with .Date}}
-      <i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}
+      <span>
+        <i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}
+      </span>
     {{end}}
     {{- if ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") -}}
-      &nbsp;&nbsp;
-      <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
+      <span>
+        <i class="fas fa-redo-alt"></i> {{.Lastmod.Format "2006-01-02"}}
+      </span>
     {{end}}
-    <div class="pc float_right">{{- partial "socialshares.html" . -}}</div>
+    <span class="pc" style="margin-left: auto;">{{- partial "socialshares.html" . -}}</span>
   </div>
-  <div class="underline">
+  <div class="underline" style="display: flex; width: 100%;">
     {{with .Params.tags}}
-        <i class="fas fa-tags"></i> {{ delimit . ", " }}
+      <span>
+        <i class="fas fa-tags"></i>{{ delimit . ", " }}
+      </span>
     {{end}}
     {{ if eq .Section .Site.Params.microBlogSection }}
-      <div class="pc float_right reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
-      <div class="sp reading_time_in_minutes center">{{- partial "reading_time_in_minutes.html" . -}}</div>
+      <span class="pc reading_time_in_minutes" style="margin-left: auto;">{{- partial "reading_time_in_minutes.html" . -}}</span>
+      <span class="sp reading_time_in_minutes center">{{- partial "reading_time_in_minutes.html" . -}}</span>
     {{ end }}
-    <div class="sp">{{- partial "socialshares.html" . -}}</div>
+    <span class="sp">{{- partial "socialshares.html" . -}}</span>
   </div>
-  {{ with .Params.githubrepo}}
-    github repository : <a href="{{.}}">{{.}}</a>
-  {{end}}  
-  {{.TableOfContents}}
   {{.Content}}
   {{if eq .Section .Site.Params.microBlogSection}}
     {{ template "_internal/disqus.html" . }}
