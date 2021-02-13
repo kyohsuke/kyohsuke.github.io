@@ -19,16 +19,14 @@
   </div>
   <div class="underline" style="display: flex; width: 100%;">
     {{with .Params.tags}}
-      <span>
-        <i class="fas fa-tags"></i>{{ delimit . ", " }}
-      </span>
+      <span><i class="fas fa-tags"></i>{{ delimit . ", " }}</span>
     {{end}}
     {{ if eq .Section .Site.Params.microBlogSection }}
       <span class="pc reading_time_in_minutes" style="margin-left: auto;">{{- partial "reading_time_in_minutes.html" . -}}</span>
-      <span class="sp reading_time_in_minutes center">{{- partial "reading_time_in_minutes.html" . -}}</span>
     {{ end }}
-    <span class="sp">{{- partial "socialshares.html" . -}}</span>
   </div>
+  <div class="sp reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
+  <div class="sp">{{- partial "socialshares.html" . -}}</div>
   {{.Content}}
   {{if eq .Section .Site.Params.microBlogSection}}
     {{ template "_internal/disqus.html" . }}
