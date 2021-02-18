@@ -21,7 +21,7 @@ enableGitInfo = true
 
 [social]
   twitter = 'kyohsuke14'
-  twitterId = '1022113389248737283'
+  twitterid = '1022113389248737283'
 
 [params]
   useAvatar = true
