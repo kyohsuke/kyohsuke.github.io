@@ -15,8 +15,9 @@
   {{ end }}
 
   <script>
-    if (null != location.pathname.match('/kyohsuke.github.io')) {
-      window.location.replace(location.origin + location.pathname.replace('/kyohsuke.github.io', ''));
+    let target = '/' + location.hostname;
+    if (null != location.pathname.match(target)) {
+      window.location.replace(location.origin + location.pathname.replace(target, ''));
     }
   </script>
 
