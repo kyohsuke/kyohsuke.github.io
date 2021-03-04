@@ -13,6 +13,11 @@ disqusShortname = "kyohsuke"
 enableRobotsTXT = true
 enableGitInfo = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [frontmatter]
   lastmod = ["lastmod", ":git", "date", "publishDate"]
 

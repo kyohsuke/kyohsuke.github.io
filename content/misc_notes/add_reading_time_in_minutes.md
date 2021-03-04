@@ -37,6 +37,6 @@ WordPress だと [Reading Time WP](https://wordpress.org/plugins/reading-time-wp
 
 いい感じにできあがりました。
 
-# 参考にしたサイト
+## 参考にしたサイト
 
 * [How to calculate the reading time of a Hugo string in minutes and seconds? &middot;Kodify](https://kodify.net/hugo/strings/reading-time-text/)
