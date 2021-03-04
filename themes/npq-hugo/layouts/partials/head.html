@@ -65,8 +65,8 @@
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
 
   {{if eq .Section .Site.Params.microBlogSection}}
-    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
-    <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
+    <link rel="alternate" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
+    <link rel="feed" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
   {{end}}  
 
   {{- partial "favicon" . -}}
