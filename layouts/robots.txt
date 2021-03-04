@@ -4,4 +4,4 @@ Allow: /
 Disallow: /{{ $url.Host }}/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
-eitemap: {{ "misc_notes/index.xml" | absURL }}
+Sitemap: {{ "misc_notes/index.xml" | absURL }}
