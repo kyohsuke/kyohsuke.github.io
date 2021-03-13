@@ -3,6 +3,7 @@ title: "Google Analytics を Tag Manager から利用する"
 date: 2021-01-10T16:40:33+09:00
 lastmod: 2021-01-10T16:40:33+09:00
 tags: [hugo, 開発]
+ogpImage: "/images/google_analytics_to_tag_manager/image1.png"
 ---
 
 Google Analytics は便利なんだけど、  

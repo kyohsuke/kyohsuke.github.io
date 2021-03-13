@@ -13,7 +13,10 @@
       {{ $description = .Site.Params.description }}
     {{ end -}}
   {{ end }}
-
+  {{- $image := "avatar.png" | absURL }}
+  {{- if .Params.OgpImage -}}
+    {{- $image = printf .Params.OgpImage | absURL -}}
+  {{- end -}}
   <script>
     let target = '/' + location.hostname;
     if (null != location.pathname.match(target)) {
@@ -36,13 +39,13 @@
   <meta name="twitter:creator:id" content="{{ .Site.Social.twitterid }}" />
   <meta name="twitter:description" content="{{ $description }}" />
   <meta name="twitter:title" content="{{ $title }}" />
-  <meta name="twitter:image" content="{{ "avatar.png" | absURL }}" />
+  <meta name="twitter:image" content="{{ $image }}" />
   <!-- End Twitter Card data -->
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{ $title }}" />
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-  <meta property="og:image" content="{{ "avatar.png" | absURL }}" />
+  <meta property="og:image" content="{{ $image }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:description" content="{{ $description }}" />
   <meta property="og:locale" content="{{ .Site.Params.Locale }}" />
