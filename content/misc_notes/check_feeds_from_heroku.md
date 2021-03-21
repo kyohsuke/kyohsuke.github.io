@@ -3,7 +3,6 @@ title: "Herokuで新規フィードをTwitterに投稿する"
 date: 2021-03-21T23:25:39+09:00
 lastmod: 2021-03-21T23:25:39+09:00
 tags: [日記, 開発]
-draft: true
 ---
 
 元々は [dlvr.it](https://dlvrit.com/) を使っていたんだけど、  
