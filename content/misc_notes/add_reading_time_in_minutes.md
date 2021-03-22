@@ -17,7 +17,7 @@ WordPress だと [Reading Time WP](https://wordpress.org/plugins/reading-time-wp
 対象記事の文字数をカウントして、220文字を読むのに1分かかるとして計算するわけですね。  
 実際に実装してみたコードがこちら。
 
-{{< highlight go-html-template "linenos=table" >}}
+```go-html-template
 {{/* 読むのにかかる時間を割り出して */}}
 {{ $readTime := mul (div (countwords .Content) 220.0) 60 }}
 
@@ -30,7 +30,7 @@ WordPress だと [Reading Time WP](https://wordpress.org/plugins/reading-time-wp
 {{- if gt $minutes 0 -}}{{ $minutes }}分{{- end -}}
 {{- if gt $seconds 0 -}}{{ $seconds }}秒{{- end -}}
 で読めます
-{{< / highlight >}}
+```
 
 そして実際に表示してみたのがこんな感じ。
 
