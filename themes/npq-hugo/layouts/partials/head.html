@@ -1,11 +1,5 @@
 <head>
   <meta charset="UTF-8">
-  <script>
-    let target = '/' + location.hostname;
-    if (null != location.pathname.match(target)) {
-      window.location.replace(location.origin + location.pathname.replace(target, ''));
-    }
-  </script>
   {{- $title := .Title -}}
   {{- if ne .Site.Title .Title -}}
     {{- $title = printf "%s | %s" .Title .Site.Title -}}
@@ -25,6 +19,14 @@
   {{ .Scratch.Set "title" $title }}
   {{ .Scratch.Set "description" $description }}
   {{ .Scratch.Set "image" $image }}
+
+  <script>
+    let target = '/' + location.hostname;
+    if (null != location.pathname.match(target)) {
+      window.location.replace(location.origin + location.pathname.replace(target, '') + location.search);
+    }
+  </script>
+
   {{- partial "gtm_head" . -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="Hatena::Bookmark" content="nocomment" />
