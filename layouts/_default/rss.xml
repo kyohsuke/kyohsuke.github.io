@@ -16,7 +16,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-<link>{{ printf "%s?%s" .Permalink ((querify "utm_source" "rss_feed" "utm_medium" "blog")) | safeURL}}</link>
+<link>{{ printf "%s?%s" .Permalink ((querify "utm_source" "rss.xml" "utm_medium" "feed")) | safeURL}}</link>
 {{ if .Description }}
   <description>{{ .Description }}</description>
 {{ else }}
@@ -34,7 +34,7 @@
 {{ range $pages }}
   <item>
   <title>{{ .Title }}</title>
-  <link>{{ printf "%s?%s" .Permalink ((querify "utm_source" "rss_feed" "utm_medium" "blog")) | safeURL}}</link>
+  <link>{{ printf "%s?%s" .Permalink ((querify "utm_source" "rss.xml" "utm_medium" "feed")) | safeURL}}</link>
   <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
   {{ range .Params.tags }}
     <category>{{.}}</category>
