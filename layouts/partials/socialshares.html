@@ -22,7 +22,7 @@
   data-height="349"
   rel="ugc,nofollow"
   aria-label="クリックして Twitter で共有"
-  class="share-button-round"
+  class="share-button-round share-button-twitter"
   href="https://twitter.com/intent/tweet?via={{ .Site.Social.twitter }}&url={{ $linkUrl }}&text={{ $title }}"
   >
   <i class="fab fa-twitter fa-ms">&nbsp;Twitter</i>
@@ -33,7 +33,7 @@
   data-width="486"
   data-height="319"
   rel="ugc,nofollow"
-  class="share-button-round"
+  class="share-button-round share-button-facebook"
   aria-label="クリックして Facebook で共有"
   href="http://www.facebook.com/share.php?u={{ $linkUrl }}"
   >
@@ -45,7 +45,7 @@
   data-width="450"
   data-height="449"
   rel="ugc,nofollow"
-  class="share-button-round"
+  class="share-button-round share-button-hatena"
   aria-label="クリックしてブックマーク"
   href="http://b.hatena.ne.jp/add?mode=confirm&url={{ $linkUrl }}&title={{ $title }}"
   >
@@ -57,7 +57,7 @@
   data-width="450"
   data-height="449"
   rel="ugc,nofollow"
-  class="share-button-round"
+  class="share-button-round share-button-pocket"
   aria-label="クリックしてポケットに保存"
   href="http://getpocket.com/edit?url={{ $linkUrl }}&title={{ $title }}"
   >
@@ -67,7 +67,7 @@
   <a
     target="_blank"
     rel="ugc,nofollow"
-    class="share-button-round"
+    class="share-button-round  share-button-rss"
     aria-label="クリックして RSS フィードを登録"
     href="{{ "misc_notes/index.xml" | absURL }}"
     type="application/rss+xml"
