@@ -3,6 +3,7 @@ title: "Github にサイトを置くためにやったこと"
 date: 2020-07-13T05:42:00+09:00
 lastmod: 2021-01-12T08:29:37+09:00
 tags: [hugo, 開発]
+customElements: [iframe]
 ---
 
 Github Pages で About サイトを作るためにやったことと、  
