@@ -1,0 +1,6 @@
+{{with .Date}}
+  <span><i class="far fa-calendar-alt"></i> {{.Format "2006-01-02"}}</span>
+{{end}}
+{{- if ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") -}}
+  <span>&nbsp;&nbsp;<i class="fas fa-sync-alt"></i> {{.Lastmod.Format "2006-01-02"}}</span>
+{{end}}
