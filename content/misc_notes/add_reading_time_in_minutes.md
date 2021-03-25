@@ -4,6 +4,7 @@ date: 2021-01-25T20:25:52+09:00
 lastmod: 2021-01-25T20:25:52+09:00
 tags: [hugo, 開発]
 ogpImage: "/images/add_reading_time_in_minutes/image1.png"
+customElements: [iframe]
 ---
 
 よくブログサイトなんかで「この記事を読むのにかかる時間」が表示されてたりするじゃないですか。

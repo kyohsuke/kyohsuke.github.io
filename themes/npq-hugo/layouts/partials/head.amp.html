@@ -5,6 +5,21 @@
   {{- if ne .Site.Title .Title -}}
     {{- $title = printf "%s | %s" .Title .Site.Title -}}
   {{- end -}}
+  {{- $description := .Description -}}
+  {{ if not .Description -}}
+    {{ if .IsPage -}}
+      {{ $description = .Summary }}
+    {{- else -}}
+      {{ $description = .Site.Params.description }}
+    {{ end -}}
+  {{ end }}
+  {{- $image := "avatar.png" | absURL }}
+  {{- if .Params.OgpImage -}}
+    {{- $image = printf .Params.OgpImage | absURL -}}
+  {{- end -}}
+  {{ .Scratch.Set "title" $title }}
+  {{ .Scratch.Set "description" $description }}
+  {{ .Scratch.Set "image" $image }}
   {{ with .OutputFormats.Get "html" }}
     <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
@@ -34,6 +49,11 @@
     {{ end }}
   </style>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" type="text/css"/>
-  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  {{ with .Params.customElements }}
+    {{ range . }}
+      <script async custom-element="amp-{{ . }}" src="https://cdn.ampproject.org/v0/amp-{{ . }}-0.1.js"></script>
+    {{ end }}
+  {{ end }}
+  {{ partial "twitter_card" . }}
+  {{ partial "opengraph" . }}
 </head>

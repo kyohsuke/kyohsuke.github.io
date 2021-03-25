@@ -3,6 +3,7 @@ title: "Hugo の RSS に category タグを追加する"
 date: 2021-03-04T17:06:39+09:00
 lastmod: 2021-03-04T17:06:39+09:00
 tags: [hugo,開発]
+customElements: [script]
 ---
 
 Hugo は自動で RSS を吐き出してくれる便利機能があるわけですが、  

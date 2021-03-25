@@ -7,6 +7,6 @@
 {{ if fileExists $search_path }}
   {{ $path = $search_path }}
   {{ with (imageConfig $path) }}
-    <amp-img src="{{ $url }}" width="{{ .Width }}" height="{{ .Height }}" layout="responsive"/>
+    <amp-img src="{{ $url }}" width="{{ .Width }}" height="{{ .Height }}" layout="responsive"></amp-img>
   {{ end }}
 {{ end }}
