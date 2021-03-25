@@ -43,6 +43,11 @@
   <link rel="stylesheet" href="{{ "css/balloon.min.css" | absURL }}" />
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
+  {{/*
+  {{ if .OutputFormats.Get "html" }}
+    <link rel="amphtml" href="{{ (printf "/%s/%s" "amp" .URL) | absURL }}" />
+  {{ end }}
+  */}}
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
 
   {{if eq .Section .Site.Params.microBlogSection}}

@@ -1,0 +1,9 @@
+<span>
+  <i class="fas fa-tags"></i>&nbsp;
+  {{- range $idx, $elem := . -}}
+    {{- if ne $idx 0 -}}
+      ,&nbsp;
+    {{- end -}}
+    <a href="/tags/{{ $elem | safeHTML }}">{{.}}</a>
+  {{- end -}}
+</span>

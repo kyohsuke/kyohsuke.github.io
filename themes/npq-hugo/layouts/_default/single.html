@@ -10,7 +10,7 @@
   </div>
   <div class="underline" style="display: flex; width: 100%;">
     {{with .Params.tags}}
-      <span><i class="fas fa-tags"></i>{{ delimit . ", " }}</span>
+      {{ partial "taglink.html" . }}
     {{end}}
     {{ if eq .Section .Site.Params.microBlogSection }}
       <span class="pc reading_time_in_minutes" style="margin-left: auto;">{{- partial "reading_time_in_minutes.html" . -}}</span>

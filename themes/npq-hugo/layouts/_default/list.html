@@ -12,7 +12,7 @@
           {{- partial "date_and_lastmod.html" . -}}
           <br>
           {{with .Params.tags}}
-            <i class="fas fa-tags"></i> {{ delimit . ", " }}
+            {{ partial "taglink.html" . }}
           {{end}}
         </div>
       </div>

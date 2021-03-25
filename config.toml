@@ -7,7 +7,7 @@ title = "kyohsuke"
 theme = "npq-hugo"
 copyright = 'Copyright © Kyohsuke | Powered by Hugo using the npq hugo theme.'
 pygmentsUseClasses = true
-disableKinds = ["term", "taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomyTerm"]
 hasCJKLanguage = true
 disqusShortname = "kyohsuke"
 enableRobotsTXT = true
@@ -23,7 +23,10 @@ enableGitInfo = true
 
 [outputs]
   home = ['HTML']
-
+  # page = ['HTML', 'AMP']
+  page = ['HTML']
+  term = ['HTML'] 
+  taxonomy = ['HTML'] 
 [social]
   twitter = 'kyohsuke14'
   twitterid = '1022113389248737283'
@@ -78,5 +81,4 @@ enableGitInfo = true
     url = 'http://amzn.to/2MLEYXX'
     pre = '<i class="fab fa-amazon fa-ms"></i>'
     post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    external = false
     weight = 70

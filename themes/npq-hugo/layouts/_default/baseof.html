@@ -8,9 +8,10 @@
       <main id="main">
         <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
         <div class="content">
-          {{- block "main" . }}{{- end }}
-          </div>
-          {{- partial "footer.html" . -}}
+          {{ block "main" . }}
+          {{ end }}
+        </div>
+        {{- partial "footer.html" . -}}
       </main>
     </div>
   </body>
