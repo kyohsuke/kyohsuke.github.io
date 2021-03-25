@@ -28,7 +28,7 @@
   </script>
 
   {{- partial "gtm_head" . -}}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
   <meta name="Hatena::Bookmark" content="nocomment" />
   <meta name="google-site-verification" content="_sC0CF55xyXtHKIPhr72YcZf2fwSLp4sLAxgOJBYGUA" />
   <meta name="robots" content="index,follow" />
@@ -43,13 +43,11 @@
   <link rel="stylesheet" href="{{ "css/balloon.min.css" | absURL }}" />
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
-  {{/*
-  {{ if .OutputFormats.Get "html" }}
-    <link rel="amphtml" href="{{ (printf "/%s/%s" "amp" .URL) | absURL }}" />
-  {{ end }}
-  */}}
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
 
+  {{ if .IsPage }}
+    <link rel="amphtml" href="{{ with .OutputFormats.Get "amp" }}{{ .Permalink }}{{ end }}" />
+  {{- end }}
   {{if eq .Section .Site.Params.microBlogSection}}
     <link rel="alternate" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
     <link rel="feed" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />

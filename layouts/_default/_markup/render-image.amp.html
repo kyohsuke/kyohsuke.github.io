@@ -1,0 +1,12 @@
+{{- $url := strings.TrimSuffix "#center" .Destination -}}
+{{ $path := $url }}
+{{ if ne (hasPrefix $url "/") }}
+  {{ $path = printf "/%s" $url }}
+{{ end }}
+{{ $search_path := printf "static%s" $url }}
+{{ if fileExists $search_path }}
+  {{ $path = $search_path }}
+  {{ with (imageConfig $path) }}
+    <amp-img src="{{ $url }}" width="{{ .Width }}" height="{{ .Height }}" layout="responsive"/>
+  {{ end }}
+{{ end }}

@@ -16,12 +16,14 @@
       <span class="pc reading_time_in_minutes" style="margin-left: auto;">{{- partial "reading_time_in_minutes.html" . -}}</span>
     {{ end }}
   </div>
-  <div class="sp reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
+  {{if eq .Section .Site.Params.microBlogSection}}
+    <div class="sp reading_time_in_minutes">{{- partial "reading_time_in_minutes.html" . -}}</div>
+  {{end}}
   <div class="sp">{{- partial "socialshares.html" . -}}</div>
   {{.Content}}
   {{if eq .Section .Site.Params.microBlogSection}}
     {{ template "_internal/disqus.html" . }}
-  {{end}}  
+  {{end}}
   {{if ne .Section ""}}
     <div class="nav-next-prev">
       <div class="nav-prev">
@@ -36,7 +38,7 @@
         {{with .NextInSection}}
           <a href="{{.Permalink}}" aria-label="{{ .Title | safeHTML }}" class="tooltip-big-text"><i class="fas fa-chevron-right"></i></a>
         {{else}}
-          <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+          <a class="grayed-out" href=""><i class="fas fa-chevron-right"></i></a>
         {{end}}
       </div>
     </div>

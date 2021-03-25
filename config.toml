@@ -13,18 +13,12 @@ disqusShortname = "kyohsuke"
 enableRobotsTXT = true
 enableGitInfo = true
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
 [frontmatter]
   lastmod = ["lastmod", ":git", "date", "publishDate"]
 
 [outputs]
   home = ['HTML']
-  # page = ['HTML', 'AMP']
-  page = ['HTML']
+  page = ['HTML', 'AMP']
   term = ['HTML'] 
   taxonomy = ['HTML'] 
 [social]
