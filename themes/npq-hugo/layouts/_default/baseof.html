@@ -2,15 +2,17 @@
 <html lang="ja" prefix="og: https://ogp.me/ns#">
   {{ partial "head.html" . -}}
   <body>
-    {{- partial "gtm_body" . -}}
-    {{- partial "aside.html" . -}}
-    <main id="main">
-      <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
-      <div class="content">
-        {{- block "main" . }}{{- end }}
-      </div>
-      {{- partial "footer.html" . -}}
-    </main>
+    <div style="overflow: hidden;">
+      {{- partial "gtm_body" . -}}
+      {{- partial "aside.html" . -}}
+      <main id="main">
+        <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+        <div class="content">
+          {{- block "main" . }}{{- end }}
+          </div>
+          {{- partial "footer.html" . -}}
+      </main>
+    </div>
   </body>
   <script src={{"js/navbutton.js" | absURL }}></script>
 </html>
