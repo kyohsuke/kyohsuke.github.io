@@ -14,7 +14,7 @@
   <nav>
     {{ range .Site.Menus.main }}
       {{ $url := urls.Parse .URL }}		
-      <a href="{{ $url }}"{{ if ne $url.Host ""}} target="_blank" {{end}}>{{ .Pre }}<span>{{ .Name }}</span></a>
+      <a href="{{ $url }}"{{ if ne $url.Host ""}} target="_blank" {{end}}>{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}</a>
     {{end}}
   </nav>
 </aside>
