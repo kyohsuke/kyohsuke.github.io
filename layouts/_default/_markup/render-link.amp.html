@@ -1,0 +1,5 @@
+{{- $href := .Destination -}}
+{{- if ne (hasPrefix .Destination "http") -}}
+  {{ $href = printf "%s/%s" ("https://amp-dev.cdn.ampproject.org/c/s") (replaceRE "^https?://(.+[^/]+).*" "$1" .Page.Permalink) }}
+{{- end -}}
+<a href="{{ $href }}">{{ .Text | safeHTML }}</a>
