@@ -18,7 +18,7 @@ enableGitInfo = true
 
 [outputs]
   home = ['HTML']
-  page = ['HTML', 'AMP']
+  page = ['HTML']
   term = ['HTML'] 
   taxonomy = ['HTML'] 
 [social]
