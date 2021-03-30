@@ -2,6 +2,7 @@
 title: "Windows 用の UPnP・NAT-PMP ポート開放ツール"
 date: 2012-02-17T19:43:41+09:00
 lastmod: 2021-01-02T00:00:00+09:00
+ogpImage: "image3.png"
 ---
 
 # ファイル
