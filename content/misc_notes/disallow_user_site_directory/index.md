@@ -3,13 +3,13 @@ title: "GitHub Pages の username.github.io ディレクトリを見えないよ
 date: 2021-01-22T19:02:40+09:00
 lastmod: 2021-01-22T19:02:40+09:00
 tags: [hugo, 開発]
-ogpImage: "/images/disallow_user_site_directory/image1.png"
+ogpImage: "image1.png"
 ---
 
 
 このサイトの Google Analytics を見ていたところ、妙な URL にアクセスしている痕跡がありました。
 
-![画像1](/images/disallow_user_site_directory/image1.png#center)
+{{< image file="image1.png" alt="画像1" center=true >}}
 
 この3番目のアクセスですね。  
  

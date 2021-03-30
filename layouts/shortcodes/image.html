@@ -1,0 +1,17 @@
+{{ $filename := printf "images/%s" (.Get "file") }}
+{{ $file := $.Page.Resources.GetMatch $filename }}
+{{ $alt := .Get "alt" }}
+{{ $center := .Get "center" }}
+{{ if $file }}
+  {{ if $center }}<center>{{end}}
+  <img src="{{ $file.RelPermalink }}{{ if $center }}#center{{ end }}"{{ if $alt }} alt="{{ $alt }}"{{ end }}/>
+  {{ if $center }}</center>{{end}}
+{{ else }}
+  <hr />
+  <span style="color: red;">[ERROR]</span> Image Not Found<br />
+  PATH: {{ $filename }}<br />
+  ALT: {{ $alt }}<br />
+  CENTER: {{ $center }}<br />
+  <hr />
+{{ end }}
+

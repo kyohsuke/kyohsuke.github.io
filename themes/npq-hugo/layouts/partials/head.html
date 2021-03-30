@@ -14,7 +14,7 @@
   {{ end }}
   {{- $image := "avatar.png" | absURL }}
   {{- if .Params.OgpImage -}}
-    {{- $image = printf .Params.OgpImage | absURL -}}
+    {{- $image = (printf "%simages/%s" .Permalink .Params.OgpImage) -}}
   {{- end -}}
   {{ .Scratch.Set "title" $title }}
   {{ .Scratch.Set "description" $description }}
@@ -36,21 +36,22 @@
   <meta name="author" content="{{ .Site.Params.author }}" />
   {{ partial "twitter_card" . }}
   {{ partial "opengraph" . }}
-  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/highlight.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/balloon.min.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" />
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+  {{ $css := resources.Match "css/*.css" | resources.Concat "name.css" | minify}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
 
   {{ if .IsPage }}
-    <link rel="amphtml" href="{{ with .OutputFormats.Get "amp" }}{{ .Permalink }}{{ end }}" />
+    {{ with .Prev }}<link rel="prev" href="{{ .URL | absURL }}" />{{ end }}
+    {{ with .Next }}<link rel="next" href="{{ .URL | absURL }}" />{{ end }}
+    {{/* <link rel="amphtml" href="{{ with .OutputFormats.Get "amp" }}{{ .Permalink }}{{ end }}" /> */}}
   {{- end }}
   {{if eq .Section .Site.Params.microBlogSection}}
-    <link rel="alternate" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
-    <link rel="feed" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
+    <link rel="alternate feed" type="application/rss+xml" title="雑記 | {{ .Site.Title }}" href="{{ "misc_notes/index.xml" | absURL }}" />
   {{end}}  
 
   {{- partial "favicon" . -}}

@@ -3,13 +3,13 @@ title: "サイトの色を反転させる CSS Negative"
 date: 2020-12-30T20:00:00+09:00
 lastmod: 2021-01-01T10:00:00+09:00
 tags: [hugo, 開発]
-ogpImage: "/images/light_site.png"
+ogpImage: "light.png"
 ---
 
 この About サイトはテンプレートとして[npq-hugo](https://themes.gohugo.io/npq-hugo/)を使っていて、  
 全体的にダークカラーで統一されていました。
 
-![Dark Site](/images/dark_site.png#center)
+{{< image file="dark.png" alt="Dark Site" center=true >}}
 
 この配色は悪くないのですが、個人的には明るい色の方がいいです。  
 文字も読みやすいしね。
@@ -24,6 +24,6 @@ ogpImage: "/images/light_site.png"
 `style.css` と `syntax.css` をコピペして変換をかけただけでも、  
 明るくてとてもいい感じのサイトに生まれ変わりました。 
 
-![Light Site](/images/light_site.png#center)
+{{< image file="light.png" alt="Light Site" center=true >}}
 
 やっぱり明るい背景に黒文字の方が読みやすいですね。
