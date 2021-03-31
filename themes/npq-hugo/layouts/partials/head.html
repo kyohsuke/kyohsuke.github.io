@@ -27,9 +27,9 @@
     }
     else {
       window.addEventListener('load', function(e){
-        if ((null != location.search.match('utm_')) && (window.history.replaceState)) {
-           //prevents browser from storing history with each change:
-           window.history.replaceState(null, null, location.pathname);
+        if ((null != location.search.match('utm_')) && window.history.replaceState) {
+          let params = window.location.search.substring(1).split('&').filter(function(param) { return !param.match(/^utm_/); }).join('&');
+          window.history.replaceState(null, null, location.pathname + (params ? '?' + params : ''));
         }
       });
     }
@@ -54,8 +54,8 @@
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
 
   {{ if .IsPage }}
-    {{ with .Prev }}<link rel="prev" href="{{ .URL | absURL }}" />{{ end }}
-    {{ with .Next }}<link rel="next" href="{{ .URL | absURL }}" />{{ end }}
+    {{ with .Prev }}<link rel="prev" href="{{ .Page.Permalink }}" />{{ end }}
+    {{ with .Next }}<link rel="next" href="{{ .Page.Permalink }}" />{{ end }}
     {{/* <link rel="amphtml" href="{{ with .OutputFormats.Get "amp" }}{{ .Permalink }}{{ end }}" /> */}}
   {{- end }}
   {{if eq .Section .Site.Params.microBlogSection}}
