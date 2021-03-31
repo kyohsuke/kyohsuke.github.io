@@ -25,6 +25,14 @@
     if (null != location.pathname.match(target)) {
       window.location.replace(location.origin + location.pathname.replace(target, '') + location.search);
     }
+    else {
+      window.addEventListener('load', function(e){
+        if ((null != location.search.match('utm_')) && (window.history.replaceState)) {
+           //prevents browser from storing history with each change:
+           window.history.replaceState(null, null, location.pathname);
+        }
+      });
+    }
   </script>
 
   {{- partial "gtm_head" . -}}
