@@ -49,8 +49,8 @@ enableGitInfo = true
     weight = 15
   [[menu.main]]
     name = 'ツール'
-    pre = '<i class="fas fa-tools fa-ms"></i>'
     url = '/tools/'
+    pre = '<i class="fas fa-tools fa-ms"></i>'
     weight = 20
   [[menu.main]]
     name = 'twitter'
@@ -72,7 +72,13 @@ enableGitInfo = true
     weight = 60
   [[menu.main]]
     name = '欲しいもの'
-    url = 'http://amzn.to/2MLEYXX'
+    url = 'https://amzn.to/2MLEYXX'
     pre = '<i class="fab fa-amazon fa-ms"></i>'
     post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
     weight = 70
+  [[menu.main]]
+    name = 'Ko-fi'
+    url = 'https://bit.ly/kyohsuke_ko-fi'
+    pre = '<i class="fas fa-mug-hot"></i>'
+    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
+    weight = 80
