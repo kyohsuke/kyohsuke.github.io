@@ -17,4 +17,11 @@
       <a href="{{ $url }}"{{ if ne $url.Host ""}} target="_blank" {{end}}>{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}</a>
     {{end}}
   </nav>
+  <div style="white-space: nowrap;"> 
+    {{ $listIcons := (default 3 .Site.Params.listIcons ) }}
+    {{ range $idx, $elem := .Site.Params.Icon }}
+      {{ if eq (mod $idx $listIcons) 0 }}<br/>{{end}}
+      <a href="{{ $elem.url }}" target="_blank" >{{ $elem.icon |safeHTML }}</a>
+    {{end}}
+  </div>
 </aside>

@@ -35,6 +35,22 @@ enableGitInfo = true
   MicroBlogSection = 'misc_notes'
   locale = "ja_JP"
   googleTagManager = 'GTM-K5XRD2X'
+  listIcons = 3
+  [[params.icon]]
+    url = 'https://github.com/kyohsuke'
+    icon = '<i class="fab fa-github fa-ms"></i>'
+  [[params.icon]]
+    url = 'https://steamcommunity.com/id/kyohsuke'
+    icon = '<i class="fab fa-steam fa-ms"></i>'
+  [[params.icon]]
+    url = 'https://twitter.com/i/user/1022113389248737283'
+    icon = '<i class="fab fa-twitter fa-ms"></i>'
+  [[params.icon]]
+    url = 'https://amzn.to/2MLEYXX'
+    icon = '<i class="fab fa-amazon fa-ms"></i>'
+  [[params.icon]]
+    url = 'https://bit.ly/kyohsuke_ko-fi'
+    icon = '<i class="fas fa-mug-hot"></i>'
 
 [menu]
   [[menu.main]]
@@ -52,33 +68,3 @@ enableGitInfo = true
     url = '/tools/'
     pre = '<i class="fas fa-tools fa-ms"></i>'
     weight = 20
-  [[menu.main]]
-    name = 'twitter'
-    url = 'https://twitter.com/i/user/1022113389248737283'
-    pre = '<i class="fab fa-twitter fa-ms"></i>'
-    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    weight = 40
-  [[menu.main]]
-    name = 'Steam'
-    url = 'https://steamcommunity.com/id/kyohsuke'
-    pre = '<i class="fab fa-steam fa-ms"></i>'
-    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    weight = 50
-  [[menu.main]]
-    name = 'github'
-    url = 'https://github.com/kyohsuke'
-    pre = '<i class="fab fa-github fa-ms"></i>'
-    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    weight = 60
-  [[menu.main]]
-    name = '欲しいもの'
-    url = 'https://amzn.to/2MLEYXX'
-    pre = '<i class="fab fa-amazon fa-ms"></i>'
-    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    weight = 70
-  [[menu.main]]
-    name = 'Ko-fi'
-    url = 'https://bit.ly/kyohsuke_ko-fi'
-    pre = '<i class="fas fa-mug-hot"></i>'
-    post = '&nbsp;<i class="fas fa-external-link-alt fa-xs"></i>'
-    weight = 80
