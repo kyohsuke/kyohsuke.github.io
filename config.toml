@@ -37,14 +37,14 @@ enableGitInfo = true
   googleTagManager = 'GTM-K5XRD2X'
   listIcons = 3
   [[params.icon]]
-    url = 'https://github.com/kyohsuke'
-    icon = '<i class="fab fa-github fa-ms"></i>'
+    url = 'https://twitter.com/i/user/1022113389248737283'
+    icon = '<i class="fab fa-twitter fa-ms"></i>'
   [[params.icon]]
     url = 'https://steamcommunity.com/id/kyohsuke'
     icon = '<i class="fab fa-steam fa-ms"></i>'
   [[params.icon]]
-    url = 'https://twitter.com/i/user/1022113389248737283'
-    icon = '<i class="fab fa-twitter fa-ms"></i>'
+    url = 'https://github.com/kyohsuke'
+    icon = '<i class="fab fa-github fa-ms"></i>'
   [[params.icon]]
     url = 'https://amzn.to/2MLEYXX'
     icon = '<i class="fab fa-amazon fa-ms"></i>'
