@@ -54,6 +54,7 @@
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 
   <link rel="sitemap" href="{{ "/sitemap.xml" | absURL }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ if .IsPage }}
     {{ with .Prev }}<link rel="prev" href="{{ .Page.Permalink }}" />{{ end }}
