@@ -1,0 +1,14 @@
+<meta itemprop="name" content="{{ .Scratch.Get "title" }}" />
+<meta itemprop="description" content="{{ .Scratch.Get "description" }}" />
+<meta itemprop="wordCount" content="{{ .WordCount }}" />
+{{- if .IsPage -}}
+  {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+  {{- with .Scratch.Get "tag" -}}
+  <meta itemprop="keywords" content="{{- (delimit . ",") -}}" />
+  {{- end -}}
+  <meta itemprop="image" content="{{ .Scratch.Get "image" }}" />
+  {{ with .Date }}<meta itemprop="datePublished" content="{{ .Format $iso8601 }}" />{{ end}}
+  {{- if ne (.Date.Format $iso8601) (.Lastmod.Format $iso8601) -}}
+    <meta itemprop="dateModified" content="{{ .Lastmod.Format $iso8601 }}" />
+  {{- end -}}
+{{- end -}}

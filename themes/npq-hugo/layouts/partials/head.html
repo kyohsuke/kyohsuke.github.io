@@ -45,6 +45,7 @@
   <meta name="author" content="{{ .Site.Params.author }}" />
   {{ partial "twitter_card" . }}
   {{ partial "opengraph" . }}
+  {{ partial "schema" . }}
   <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" />
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
   {{ $css := resources.Match "css/*.css" | resources.Concat "name.css" | minify}}
