@@ -19,6 +19,7 @@
   {{ .Scratch.Set "title" $title }}
   {{ .Scratch.Set "description" $description }}
   {{ .Scratch.Set "image" $image }}
+  {{ .Scratch.Set "tag" .Params.tags }}
 
   <script>
     let target = '/' + location.hostname;
