@@ -23,7 +23,7 @@
   rel="ugc nofollow external"
   aria-label="Twitterで共有"
   class="share-button-round share-button-twitter"
-  href="https://twitter.com/intent/tweet?via={{ .Site.Social.twitter }}&url={{ $linkURL }}{{ printf "%s%s" "?" (querify "utm_source" "twitter" "utm_medium" "share") | safeHTML }}&text={{ $title }}"
+  href="https://twitter.com/intent/tweet?url={{ $linkURL }}{{ printf "%s%s" "?" (querify "utm_source" "twitter" "utm_medium" "share") | safeHTML }}&text={{ $title }}"
   >
   <i class="fab fa-twitter fa-ms">&nbsp;Twitter</i>
 </a>
@@ -35,7 +35,7 @@
   rel="ugc nofollow external"
   class="share-button-round share-button-facebook"
   aria-label="Facebookで共有"
-  href="http://www.facebook.com/share.php?u={{ $linkURL }}{{ printf "%s%s" "?" (querify "utm_source" "facebook" "utm_medium" "share") | safeHTML }}"
+  href="http://www.facebook.com/share.php?u={{ $linkURL }}{{ printf "%s%s" "?" (querify "utm_source" "facebook" "utm_medium" "share") | safeHTML }}&t={{ $title }}"
   >
   <i class="fab fa-facebook fa-ms">&nbsp;Facebook</i>
 </a>
