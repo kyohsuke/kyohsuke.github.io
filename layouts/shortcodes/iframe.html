@@ -1,0 +1,17 @@
+{{ $class := .Get "class" }}
+{{ $style := .Get "style" }}
+{{ $title := .Get "title" }}
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $frameborder := .Get "frameborder" }}
+{{ $scrolling := .Get "scrolling" }}
+<iframe
+  {{ if $class }}class="{{ $class }}"{{ end }}
+  {{ if $style }}style="{{ $style }}"{{ end }}
+  {{ if $title }}title="{{ $title }}"{{ end }}
+  src="{{ $src }}"
+  {{ if $width }}width="{{ $width }}"{{ end }}
+  {{ if $height }}height="{{ $height }}"{{ end }}
+  {{ if $frameborder }}frameborder="{{$frameborder}}"{{ end }}
+  {{ if $scrolling }}scrolling="{{ $scrolling }}"{{ end }}></iframe>
