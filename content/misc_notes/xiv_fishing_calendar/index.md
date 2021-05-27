@@ -7,7 +7,8 @@ ogpImage: "image1.png"
 ---
 
 Final Fantasy XIV で釣りをやってると「次に釣れるのいつだよ・・・」となる魚がいくつかいて、  
-その中の紅龍があまりにも調べるのダルかったのでついカッとなってカレンダーを作った。
+その中の紅龍があまりにも調べるのダルかったのでついカッとなってカレンダーを作った。  
+※紅龍の前提となるクアルの釣れる時間を開始時間にしています
 
 {{< iframe src="https://calendar.google.com/calendar/embed?src=jqb19fdus7b2ms9bkr977qa0qigf3sba%40import.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" >}}
 
