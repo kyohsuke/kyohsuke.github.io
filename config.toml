@@ -51,9 +51,6 @@ enableGitInfo = true
   [[params.icon]]
     url = 'https://www.patreon.com/kyohsuke'
     icon = '<i class="fab fa-patreon fa-ms"></i></i>'
-  [[params.icon]]
-    url = 'https://bit.ly/kyohsuke_ko-fi'
-    icon = '<i class="fas fa-mug-hot fa-ms"></i>'
 
 [menu]
   [[menu.main]]
