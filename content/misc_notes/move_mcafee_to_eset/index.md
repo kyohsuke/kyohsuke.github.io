@@ -8,7 +8,7 @@ ogpImage: "image1.png"
 
 macOS のアンチウィルスソフトで [McAfee](https://www.mcafee.com/ja-jp/index.html) を使っていたんだけど、  
 VShieldScanner が CPU 100% になって帰ってこない謎の現象が発生してしまっていて、  
-[フォーラムでも報告されている](https://community.mcafee.com/t5/Mac-Products/VShieldScanner-high-CPU-on-Mac-Big-Sur/td-p/685668) んだけど一向に修正される気配がないので乗り換えることにした。
+[フォーラムでも報告されている](https://community.mcafee.com/t5/Mac-Products/VShieldScanner-high-CPU-on-Mac-Big-Sur/td-p/685668)んだけど一向に修正される気配がないので乗り換えることにした。
 
 挙動としては Permission Denied な場所にアクセスして、  
 それが refuse された時にこれが発生しているように見えるんだけど修正されない。  
