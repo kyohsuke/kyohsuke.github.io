@@ -33,12 +33,14 @@ jobs:
 
       - name: Ping Sitemap
         run: |
+          sleep 60
           curl --silent https://kyohsuke.github.io/sitemap.xml -o before.xml
           if diff -q public/sitemap.xml before.xml; then
             echo "no sitemap changes."
           else
             echo "sitemap changeed. ping!"
             curl --silent https://www.google.com/ping?sitemap=https://kyohsuke.github.io/sitemap.xml -o - > /dev/null
+            curl --silent http://www.bing.com/ping?sitemap=https://kyohsuke.github.io/sitemap.xml -o - > /dev/null 
           fi
 
           curl --silent https://kyohsuke.github.io/misc_notes/index.xml -o notes_before.xml
@@ -46,7 +48,6 @@ jobs:
             echo "no RSS changes."
           else
             echo "RSS changeed. ping!"
-            sleep 60
             curl --silent https://feed-check.herokuapp.com/check/7e0a72d0d25bd98445a5f1e5d246c1cb7775c9fc5e5ad64524d3bbdde9e188c7/kyohsuke -o -
           fi
       - name: Slack Notification on Success
