@@ -23,7 +23,8 @@
   {{ .Scratch.Set "image" $image }}
   {{ .Scratch.Set "tag" .Params.tags }}
 
-  <script>{{ (resources.Get "js/utm_remover.js" | minify).Content | safeJS }}</script>
+  {{ $js := resources.Match "js/*.js" | resources.Concat "js/bundle.js" | minify }}
+  <script>{{ $js.Content | safeJS }}</script>
 
   {{- partial "gtm_head" . -}}
   <meta name="Hatena::Bookmark" content="nocomment" />

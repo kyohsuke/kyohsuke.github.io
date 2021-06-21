@@ -15,6 +15,4 @@
       </main>
     </div>
   </body>
-  {{ $navbutton := resources.Get "js/navbutton.js" | minify | fingerprint "sha512" }}
-  <script src="{{ $navbutton.RelPermalink }}" integrity="{{ $navbutton.Data.Integrity }}"></script>
 </html>
