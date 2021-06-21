@@ -1,5 +1,7 @@
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+
   {{- $title := .Title -}}
   {{- if ne .Site.Title .Title -}}
     {{- $title = printf "%s | %s" .Title .Site.Title -}}
@@ -21,23 +23,9 @@
   {{ .Scratch.Set "image" $image }}
   {{ .Scratch.Set "tag" .Params.tags }}
 
-  <script>
-    let target = '/' + location.hostname;
-    if (null != location.pathname.match(target)) {
-      window.location.replace(location.origin + location.pathname.replace(target, '') + location.search);
-    }
-    else {
-      window.addEventListener('load', function(e){
-        if ((null != location.search.match('utm_')) && window.history.replaceState) {
-          let params = window.location.search.substring(1).split('&').filter(function(param) { return !param.match(/^utm_/); }).join('&');
-          window.history.replaceState(null, null, location.pathname + (params ? '?' + params : ''));
-        }
-      });
-    }
-  </script>
+  <script>{{ (resources.Get "js/utm_remover.js" | minify).Content | safeJS }}</script>
 
   {{- partial "gtm_head" . -}}
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
   <meta name="Hatena::Bookmark" content="nocomment" />
   <meta name="google-site-verification" content="_sC0CF55xyXtHKIPhr72YcZf2fwSLp4sLAxgOJBYGUA" />
   <meta name="robots" content="index,follow" />
@@ -46,10 +34,8 @@
   {{ partial "twitter_card" . }}
   {{ partial "opengraph" . }}
   {{ partial "schema" . }}
-  <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" />
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
-  {{ $css := resources.Match "css/*.css" | resources.Concat "name.css" | minify}}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  {{ $css := resources.Match "css/*.css" | resources.Concat "main.css" | minify | fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
 
   <script src="https://kit.fontawesome.com/90debbdc1e.js" crossorigin="anonymous"></script>
 

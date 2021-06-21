@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
   {{ partial "head.html" . -}}
   <body>
@@ -15,5 +15,6 @@
       </main>
     </div>
   </body>
-  <script src={{"js/navbutton.js" | absURL }}></script>
+  {{ $navbutton := resources.Get "js/navbutton.js" | minify | fingerprint "sha512" }}
+  <script src="{{ $navbutton.RelPermalink }}" integrity="{{ $navbutton.Data.Integrity }}"></script>
 </html>
