@@ -42,7 +42,7 @@
 <image>
   <title>{{ .Site.Title }}</title>
   <link>{{ "/" | absURL }}</link>
-  <url>{{ "avatar.png" | absURL }}</url>
+  <url>{{ "avatar.jpg" | absURL }}</url>
 </image>
 <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
 <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}

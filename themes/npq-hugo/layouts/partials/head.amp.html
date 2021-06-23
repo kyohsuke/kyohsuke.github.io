@@ -13,7 +13,7 @@
       {{ $description = .Site.Params.description }}
     {{ end -}}
   {{ end }}
-  {{- $image := "avatar.png" | absURL }}
+  {{- $image := "avatar.jpg" | absURL }}
   {{- if .Params.OgpImage -}}
     {{- $image = printf .Params.OgpImage | absURL -}}
   {{- end -}}
