@@ -1,4 +1,15 @@
 {{- $url := urls.Parse .Site.BaseURL -}}
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: facebot
+User-agent: ia_archiver
+Disallow: /misc_notes/index.xml
+
 User-agent: *
 Allow: /
 Disallow: /{{ $url.Host }}/
